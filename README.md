@@ -10,7 +10,7 @@
 
 This repository is a sourcebook of scheduled tickets for the course **C Programming**, Department of information technology (FIT), Novosibirsk national research state University (NSU).
 
-**Authors**: Valitov Andrew, Khayetskaya Darya, Abramushkina Ekaterina - 1-year students, FIT NSU, 2019-2020 academic year.
+**Authors**: Valitov Andrey, Khayetskaya Darya, Abramushkina Ekaterina - 1-year students, FIT NSU, 2019-2020 academic year.
 
 ## Contents
 
