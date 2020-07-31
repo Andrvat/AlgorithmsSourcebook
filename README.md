@@ -18,6 +18,6 @@ This repository is a sourcebook of scheduled tickets for the course **C Programm
 
 ## Contents
 
-1. [C PROGRAMMING](https://github.com/Andrvat/AlgorithmsSourcebook/blob/master/CLanguage)
-2. [ALGORITHMS](https://github.com/Andrvat/AlgorithmsSourcebook/blob/master/BasicAlgorithms)
+1. [C PROGRAMMING](https://github.com/Andrvat/AlgorithmsSourcebook/blob/master/CLanguage.md)
+2. [ALGORITHMS](https://github.com/Andrvat/AlgorithmsSourcebook/blob/master/Algorithms.md)
 3. [QUESTIONS](https://github.com/Andrvat/AlgorithmsSourcebook/blob/master/%D0%91%D0%B8%D0%BB%D0%B5%D1%82%D1%8B.pdf)
