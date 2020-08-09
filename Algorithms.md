@@ -250,6 +250,7 @@ void MergeSort(int values[], size_t len) {
 
 [:arrow_up: Back to contents](#Contents)
 ____
+____
 
 ## Метод Хаффмана
 
