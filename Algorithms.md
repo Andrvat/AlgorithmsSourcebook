@@ -26,26 +26,32 @@ ____
 3. В конце концов, просмотры слева-направо и справа-налево сходятся в одной точке *j*, которая нам разделит рассматриваемый массив на два подмассива. Повторяем рекурсивно алгоритм уже для них, пока не дойдём до массива из 1 элемента - это контролируется условием *if l < r* в основной функции *quicksort*.
 
 ```c
-int partition(a: T[n], int l, int r)
-     T v = a[(l + r) / 2]
-     int i = l
-     int j = r
-     while (i ⩽ j) {
-        while (a[i] < v)
-           i++
-        while (a[j] > v)
-           j--
-        if (i ⩾ j) 
-           break
-        swap(a[i++], a[j--])
-		}
-     return j
+int partition(int a[], int l, int r) {
+    int v = a[(l + r) / 2];
+    int i = l;
+    int j = r;
+    while (i <= j) {
+        while (a[i] < v) {
+            i++;
+	}
+        while (a[j] > v) {
+            j--;
+	}
+        if (i >= j) {
+            break;
+	}
+        swap(a[i++], a[j--]);
+    }
+    return j;
+}
 
-void quicksort(a: T[n], int l, int r)
-     if l < r
-        int q = partition(a, l, r)
-        quicksort(a, l, q)
-        quicksort(a, q + 1, r)
+void quicksort(int a[], int l, int r) {
+    if (l < r) {
+        int q = partition(a, l, r);
+        quicksort(a, l, q);
+        quicksort(a, q + 1, r);
+    }
+}
 ```
 
 Для сортировки всего массива необходимо выполнить процедуру
