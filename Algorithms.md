@@ -349,6 +349,7 @@ struct Node* addElementToLinkedList(struct Node *lst, T newData) {
 1. Найти узел, который необходимо удалить;
 2. Изменить значение поля _Next_ предыдущего узла так, чтобы оно указывало на узел, следующий за удаляемым;
 3. Удалить узел с помощью встроенной в Си функции _free()_.
+
 Реализация:
 ```c
 struct Node *deleteElementFromLinkedList(struct Node *lst, struct Node *root) {
