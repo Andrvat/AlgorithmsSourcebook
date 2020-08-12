@@ -601,7 +601,7 @@ int seekSubstring (char s[], char q[]) {
 ```
 Одним из подходов к улучшению наивной реализации решения задачи поиска подстроки в строке является **алгоритм Бойера-Мура**. Данный алгоритм ведет сравнение символов из строки и шаблона, начиная с _q[М – 1]_ и с _s[i + М – 1]_ элементов в обратном порядке.
 
-![Pic](#https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9b46bc63-482b-4435-9770-adf4dbd9982e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200812%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200812T142139Z&X-Amz-Expires=86400&X-Amz-Signature=15d948eb1f8b0a41d43421e4e5d3e91c66051d7943d9da25482bc676ca8dea15&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b46bc63-482b-4435-9770-adf4dbd9982e/Untitled.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9b46bc63-482b-4435-9770-adf4dbd9982e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200812%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200812T142331Z&X-Amz-Expires=86400&X-Amz-Signature=6961b581baf6f3509c944de6dd8c907412556a83be934075e6eb9247f799f407&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 В нем используется дополнительная таблица сдвигов _d_. Для каждого символа _x_ из алфавита (кроме последнего в шаблоне) _d[x]_ есть расстояние от самого **правого** вхождения _х_ в шаблон до последнего символа шаблона. Для последнего символа в шаблоне _d[x]_ равно расстоянию от **предпоследнего** вхождения _х_ до
 последнего или _М_, если предпоследнего вхождения нет. Если символ алфавита не участвует в шаблоне, то его значение в таблице сдвигов будет положено *M* - длине шаблона. Приведем пример построения таблицы сдвигов:
@@ -631,8 +631,9 @@ s[i – М + 1 ... i] /* в начале i = М */
 - Если _q[j] ≠ s[k]_ (см. рабочие индексы) и _k = i_, т. е. расхождение случилось сразу же на последней позиции шаблона, то _q_ можно сдвинуть вправо так, чтобы последнее вхождение символа _s[i]_ в _q_ совместилось с _s[i]_ текста.
 - Если _q[j] ≠ s[k]_ и _k < i_, т. е. некоторые последние символы совпали, то _q_ сдвинется так, чтобы **предпоследнее** вхождение _s[i]_ в _q_ совместилось с _s[i]_ текста. 
 В обоих случаях **величина сдвига** равна _d[s[i]]_ по построению. В частности, если _s[i]_ вообще не встречается в _q_, то смещение происходит сразу на полную длину шаблона _М_.
+
 Приведем наглядный пример работы алгоритма:
-![Pic](#https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b13c1d52-2d86-449d-ad45-591e67c842a9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200812%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200812T142118Z&X-Amz-Expires=86400&X-Amz-Signature=639fbf6705b3f4bc3ab99f9a941084895ad0b2c40ac8a7c2c7f6e7225027c1c3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b13c1d52-2d86-449d-ad45-591e67c842a9/Untitled.png](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b13c1d52-2d86-449d-ad45-591e67c842a9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200812%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200812T142401Z&X-Amz-Expires=86400&X-Amz-Signature=70bb25ce409cbb24a2b2bdde8ba616434ec5f06366afcd895e1e41b9cd7556c8&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 И непосредственно саму реализацию:
 ```c
@@ -664,7 +665,7 @@ int seekSubstringBM(unsigned char s[], unsigned char q[]) {
 	
 		i += d[(unsigned) s[i]]; /*сдвиг на расстояние d[s[i]] вправо*/
 	
-	} while(i < N);
+	} while (i < N);
 	
 	return -1;
 }
